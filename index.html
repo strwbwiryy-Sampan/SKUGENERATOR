@@ -8,15 +8,10 @@
     <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
 </head>
 <body>
-    <div>
+    <div class = "SKU-buttons">
     <form>
-        <label for="search">Search for an item:</label>
+        <label for="search">SKU GENERATOR</label>
         <br>
-        <input type="text" id="item" placeholder="Search for an item" required>
-        <button type="button" py-click="display_char" id="btn">Generate</button>
-
-        <br>
-
         <select id="Categories">
             <option value="">Categories</option>
             <option value="5">Appliances (+100)</option>
@@ -25,19 +20,26 @@
             <option value="105">Food (+30)</option>
         </select>
 
+      
         <br>
-        <input type="text" id="Product Name" placeholder="Product Name" required>
-        <button type="button" py-click="display_char" id="btn">Search</button>
+        <input type="text" id="prodname" placeholder="Product Name" required>
+        <button type="button" py-click="search_item" id="prodsearch">Search</button>
         <br>
-            <input type="number" id="Stock Quantity" placeholder="Stock Quantity" required>
-        <button type="button" py-click="display_char" id="btn">Search</button>
+        <input type="number" id="stkqty" placeholder="Stock Quantity" required>
+        <button type="button" py-click="calculate_qty" id="calcu">Calculate</button>
+        <br>
+        <input type="text" id="item" placeholder="Generate SKU" required>
+        <button type="button" py-click="generate" id="generate">Generate</button>
+        <br>
+
+
+    
 
       
     </form>
     </div>
 
     <div id="output1">
-        <div id="output2"></div>
     </div>
     <script type="py" src="main.py"></script>
 
