@@ -3,34 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SKU Generator</title>
      <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <style>
+        form{
+            background-color: #010177;
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 55px;
+            margin-top: 35px;
+
+        }
+
+        header{
+             background-color: #010177;
+             color: aliceblue;
+        }
+        label{
+            color: aliceblue;
+            font-size: 40px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+
+        option{
+            margin-top: 50px;
+            font-size: medium;
+        }
+        button{
+            background-color: #dab120;
+            color: #000052;
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input{
+            font-size: 15px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 15px;
+            
+        }
+        select{
+            font-size: 15px;
+            margin-top: 25px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-top: 25px;
+        }
+        
+       
+            
+
+    </style>
 </head>
 <body>
+    <header>
+  <h1>SKU Generator</h1>
+</header>
+
     <div class = "SKU-buttons">
+        <br>
     <form>
         <label for="search">SKU GENERATOR</label>
         <br>
         <select id="Categories">
             <option value="">Categories</option>
-            <option value="5">Appliances (+100)</option>
-            <option value="29">Furniture (+1000)</option>
-            <option value="59">Toys (+50)</option>
-            <option value="105">Food (+30)</option>
+            <option value= "Appliances">Appliances(+100)</option>
+            <option value="Furniture">Furniture (+1000)</option>
+            <option value="Toys">Toys (+50)</option>
+            <option value="Food">Food (+30)</option>
         </select>
 
       
-        <br>
+        <br><br>
         <input type="text" id="prodname" placeholder="Product Name" required>
         <button type="button" py-click="search_item" id="prodsearch">Search</button>
         <br>
         <input type="number" id="stkqty" placeholder="Stock Quantity" required>
         <button type="button" py-click="calculate_qty" id="calcu">Calculate</button>
         <br>
-        <input type="text" id="item" placeholder="Generate SKU" required>
-        <button type="button" py-click="generate" id="generate">Generate</button>
-        <br>
+        <button type="button" py-click="generate_sku" id="sku">Generate SKU</button>
+
+        <div id="SKU_result" style="color: aliceblue; font-size: 20px; margin-top: 35px;"></div>
 
 
     
